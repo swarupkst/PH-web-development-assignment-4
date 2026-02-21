@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <section class="lg:pl-[245px] pl-[2px] xl:pr-[245px] pr-[2px] pt-[60px] pb-[60px] bg-[#F8FAFC] ">
+    <section id="top">
+    
+    <h1 class="text-4xl font-bold mb-6 text-left lg:pl-[160px]">
+        Job Application Tracker
+    </h1>
+    <div class="flex flex-col items-center justify-center px-4">
+
+    <div class="flex flex-col sm:flex-row gap-4 w-full max-w-6xl items-center justify-center">
+        
+        <div class="p-5 w-full sm:w-[359px] h-[97px] bg-white shadow rounded-lg">
+            <p class="text-[20px]">Total</p>
+            <p id="total-num" class="text-2xl ">0</p>
+        </div>
+
+        <div class="p-5 w-full sm:w-[359px] h-[97px] bg-white shadow rounded-lg">
+            <p class="text-[20px]">Interview</p>
+            <p id="interview-num" class="text-2xl text-green-500">0</p>
+        </div>
+
+        <div class="p-5 w-full sm:w-[359px] h-[97px] bg-white shadow rounded-lg">
+            <p class="text-[20px]">Rejected</p>
+            <p id="rejected-num" class="text-2xl text-red-500">0</p>
+        </div>
+
+    </div>
+    </div>
+
+</section>
+<hr class="mt-[30px] mb-[30px]">
+<section>
+    <h2 class="text-2xl font-bold">Available Jobs</h2>
+    <div class="pt-[24px]">
+        <button class="btn btn-soft btn-info">All</button>
+        <button class="btn btn-soft btn-info">Interview</button>
+        <button class="btn btn-soft btn-info">Rejected</button>
+    </div>
+</section>
+    </section>
+</body>
+</html>
