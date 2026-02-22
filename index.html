@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <section class="lg:pl-[245px] pl-[2px] xl:pr-[245px] pr-[2px] pt-[60px] pb-[60px] bg-[#F8FAFC] ">
@@ -41,13 +41,77 @@
 </section>
 <hr class="mt-[30px] mb-[30px]">
 <section>
-    <h2 class="text-2xl font-bold">Available Jobs</h2>
-    <div class="pt-[24px]">
-        <button class="btn btn-soft btn-info">All</button>
-        <button class="btn btn-soft btn-info">Interview</button>
+    <h2 class="text-2xl font-bold">Available Jobs </h2>  
+    <p class="text-right pr-4 text-2xl"> <span id="total-numsm">0</span> jobs</p>
+    <div>
+    <div class="pt-[24px] mr-4">
+        <button class="btn btn-soft btn-info mr-3">All</button>
+        <button class="btn btn-soft btn-info mr-3">Interview</button>
         <button class="btn btn-soft btn-info">Rejected</button>
+
+        </div>
+        <div class="pt-5" id="main-div">
+            <div class="bg-[#FFFFFF] p-5 space-y-3 sub-div mt-4">
+                <div class="flex justify-between">
+                    <div class="space-y-3 ">
+                <h3 class="font-bold text-[20px]">Mobile Frist Corp</h3>
+                <p>React Native Developer</p>
+                </div>
+                    <button  class=" delete-btn w-10 h-10 border border-gray-300 flex items-center justify-center bg-none text-gray-700 rounded-full "><i class="fa-regular fa-trash-can"></i></button>
+                </div>
+                <p>Remote • Full-time • $130,000 - $175,000</p>
+                <p class="inline-block px-6 py-2 bg-[#EEF4FF]">NOT APPLIED</p>
+                <p>Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+
+                <div class="flex sm:flex-none sm:justify-normal justify-center gap-4">
+
+                <button class="btn btn-outline btn-success">INTERVIEW</button>
+                <button class="btn btn-outline btn-error">REJECTED</button>
+                </div>
+            </div>
+
+                <div class="bg-[#FFFFFF] p-5 space-y-3 sub-div mt-4">
+                <div class="flex justify-between">
+                    <div class="space-y-3 ">
+                <h3 class="font-bold text-[20px]">Mobile Frist Corp</h3>
+                <p>React Native Developer</p>
+                </div>
+                    <button  class=" delete-btn w-10 h-10 border border-gray-300 flex items-center justify-center bg-none text-gray-700 rounded-full "><i class="fa-regular fa-trash-can"></i></button>
+                </div>
+                <p>Remote • Full-time • $130,000 - $175,000</p>
+                <p class="inline-block px-6 py-2 bg-[#EEF4FF]">NOT APPLIED</p>
+                <p>Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+
+                <div class="flex sm:flex-none sm:justify-normal justify-center gap-4">
+
+                <button class="btn btn-outline btn-success">INTERVIEW</button>
+                <button class="btn btn-outline btn-error">REJECTED</button>
+                </div>
+            </div>
+
+                        <div class="bg-[#FFFFFF] p-5 space-y-3 sub-div mt-4">
+                <div class="flex justify-between">
+                    <div class="space-y-3 ">
+                <h3 class="font-bold text-[20px]">Mobile Frist Corp</h3>
+                <p>React Native Developer</p>
+                </div>
+                    <button  class="delete-btn w-10 h-10 border border-gray-300 flex items-center justify-center bg-none text-gray-700 rounded-full "><i class="fa-regular fa-trash-can"></i></button>
+                </div>
+                <p>Remote • Full-time • $130,000 - $175,000</p>
+                <p class="inline-block px-6 py-2 bg-[#EEF4FF]">NOT APPLIED</p>
+                <p>Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+
+                <div class="flex sm:flex-none sm:justify-normal justify-center gap-4">
+
+                <button class="btn btn-outline btn-success">INTERVIEW</button>
+                <button class="btn btn-outline btn-error">REJECTED</button>
+                </div>
+            </div>            
+
+        </div>
     </div>
 </section>
     </section>
+    <script src="./script.js"></script>
 </body>
 </html>
