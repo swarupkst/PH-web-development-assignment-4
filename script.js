@@ -217,8 +217,6 @@ for (let i = 1; i <= 8; i++) {
             count();
         } 
         
-        
-        
         else {
             setTimeout(() => {
                 filterCards(currentTab);
