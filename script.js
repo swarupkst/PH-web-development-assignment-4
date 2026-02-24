@@ -1,6 +1,7 @@
 let interviewJobs = [];
 let rejectedJobs = [];
 let currentTab = "all";
+
 function count() {
     const allSubDivs = document.querySelectorAll('.sub-div');
     const totalApp = allSubDivs.length;
@@ -24,26 +25,32 @@ for (let i = 1; i <= 8; i++) {
     document.querySelector('.delete-btn' + i)
         .addEventListener('click', function () {
 
-            document.querySelector('.card' + i).remove();
-            count();
+            const card = document.querySelector('.card' + i);
+            card.remove();
 
-            const totalApp = count();
+            interviewJobs = interviewJobs.filter(c => c !== card);
+            rejectedJobs = rejectedJobs.filter(c => c !== card);
 
-            const emptyMessage = `
-    <div class="empty-state flex items-center justify-center flex-col bg-[#FFFFFF] p-10 m-4">
-        <img src="./jobs.png" alt="No Job" class="w-40">
-        <p class="mt-5 font-semibold text-2xl">No jobs Available</p>
-        <p>Check back soon for new job opportunities</p>
-    </div>
-    `;
+            updateDashboard();
 
-            if (totalApp === 0 && currentTab === "all") {
-                mainDiv.innerHTML = emptyMessage;
+
+            const allCount = document.querySelectorAll('.sub-div').length;
+
+            if (allCount === 0 && currentTab === "all") {
+                mainDiv.innerHTML = `
+                    <div class="empty-state flex items-center justify-center flex-col bg-[#FFFFFF] p-10 m-4">
+                        <img src="./jobs.png" alt="No Job" class="w-40">
+                        <p class="mt-5 font-semibold text-2xl">No jobs Available</p>
+                        <p>Check back soon for new job opportunities</p>
+                    </div>
+                `;
+            } else {
+                filterCards(currentTab);
+                count();
             }
         });
 }
 count();
-
 
 const allBtn = document.getElementById("all-job");
 const interviewBtn = document.getElementById("interview-list");
@@ -82,13 +89,8 @@ for (let i = 1; i <= 8; i++) {
         });
 }
 
-
-
-
-
 const interviewCount = document.getElementById("interview-num");
 const rejectedCount = document.getElementById("rejected-num");
-
 
 function updateDashboard() {
     interviewCount.innerText = interviewJobs.length;
@@ -104,19 +106,14 @@ function filterCards(tab) {
 
         if (tab === "all") {
             card.style.display = "block";
-        }
-
-        else if (tab === "interview") {
+        } else if (tab === "interview") {
             card.style.display = interviewJobs.includes(card) ? "block" : "none";
-        }
-
-        else if (tab === "rejected") {
+        } else if (tab === "rejected") {
             card.style.display = rejectedJobs.includes(card) ? "block" : "none";
         }
     }
     showTabEmptyMessage();
 }
-
 
 function showTabEmptyMessage() {
 
@@ -142,7 +139,6 @@ function showTabEmptyMessage() {
     }
 }
 
-
 allBtn.addEventListener("click", function () {
     currentTab = "all";
     filterCards("all");
@@ -160,7 +156,6 @@ rejectBtn.addEventListener("click", function () {
     filterCards("rejected");
     count();
 });
-
 
 for (let i = 1; i <= 8; i++) {
 
@@ -184,7 +179,6 @@ for (let i = 1; i <= 8; i++) {
         count();
     });
 
-
     rejectButton.addEventListener("click", function () {
 
         if (!rejectedJobs.includes(card)) {
@@ -198,7 +192,6 @@ for (let i = 1; i <= 8; i++) {
         count();
     });
 
-
     deleteButton.addEventListener("click", function () {
 
         interviewJobs = interviewJobs.filter(c => c !== card);
@@ -206,30 +199,35 @@ for (let i = 1; i <= 8; i++) {
 
         updateDashboard();
 
-        card.remove(); 
+        card.remove();
 
         const allCount = document.querySelectorAll('.sub-div').length;
 
-        if (allCount === 0 && currentTab === "all") {
-            const mainDiv = document.getElementById('main-div');
-            mainDiv.innerHTML = `
+        if (allCount === 0 && rejectedJobs.length === 0 && interviewJobs.length === 0) {
+            const divMain = document.getElementById('div-main');
+            divMain.innerHTML = `
                 <div class="empty-state flex items-center justify-center flex-col bg-[#FFFFFF] p-10 m-4">
                     <img src="./jobs.png" alt="No Job" class="w-40">
                     <p class="mt-5 font-semibold text-2xl">No jobs Available</p>
                     <p>Check back soon for new job opportunities</p>
                 </div>
             `;
+
+            console.log("none")
+            count();
         } 
+        
+        
+        
         else {
             setTimeout(() => {
                 filterCards(currentTab);
-                count(); 
-            });
+                count();
+            }, 50);
         }
 
     });
 }
-
 
 updateDashboard();
 count();
